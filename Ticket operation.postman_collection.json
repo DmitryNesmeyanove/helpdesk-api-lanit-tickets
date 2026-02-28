@@ -1,0 +1,605 @@
+{
+  "info": {
+    "_postman_id": "b4abbb7c-3ccc-4c80-8734-c8f094914a7a",
+    "name": "Ticket operation",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "49403821",
+    "_collection_link": "https://go.postman.co/collection/49403821-b4abbb7c-3ccc-4c80-8734-c8f094914a7a?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Get requests",
+      "item": [
+        {
+          "name": "getting a list of tickets",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Тикет получен успешно\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/api/tickets",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "tickets"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get the latest monthly report",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Статус ответа 200 OK\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"due_date\": \"2026-02-28\",\r\n  \"assigned_to\": \"admin\",\r\n  \"title\": \"New ticket\",\r\n  \"created\": \"2026-02-28T14:12:40.946Z\",\r\n  \"modified\": \"2026-02-28T14:12:40.946Z\",\r\n  \"submitter_email\": \"test@te.te\",\r\n  \"status\": 1,\r\n  \"on_hold\": false,\r\n  \"description\": \"Создание нового тикета\",\r\n  \"resolution\": \"Допускается\",\r\n  \"priority\": 1,\r\n  \"secret_key\": \"тест\",\r\n  \"queue\": 1,\r\n  \"kbitem\": 1,\r\n  \"merged_to\": 1\r\n}"
+            },
+            "url": {
+              "raw": "{{url}}/api/tickets/report/last",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "tickets",
+                "report",
+                "last"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get the annual report",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Статус ответа 200 OK\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"due_date\": \"2026-02-28\",\r\n  \"assigned_to\": \"admin\",\r\n  \"title\": \"New ticket\",\r\n  \"created\": \"2026-02-28T14:12:40.946Z\",\r\n  \"modified\": \"2026-02-28T14:12:40.946Z\",\r\n  \"submitter_email\": \"test@te.te\",\r\n  \"status\": 1,\r\n  \"on_hold\": false,\r\n  \"description\": \"Создание нового тикета\",\r\n  \"resolution\": \"Допускается\",\r\n  \"priority\": 1,\r\n  \"secret_key\": \"тест\",\r\n  \"queue\": 1,\r\n  \"kbitem\": 1,\r\n  \"merged_to\": 1\r\n}"
+            },
+            "url": {
+              "raw": "{{url}}/api/tickets/report/2026",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "tickets",
+                "report",
+                "2026"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get a monthly report",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Статус ответа 200 OK\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/api/tickets/report/2026/2",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "tickets",
+                "report",
+                "2026",
+                "2"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get the ticket ID",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Статус ответа 200 OK\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "Token abcbe889f0306a8d35dfa101eb152850b434be35",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/api/tickets/1",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "tickets",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "get a list of ticket status changes",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Статус ответа 200 OK\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"comment\": \"New commit\",\r\n  \"new_status\": 2\r\n}",
+              "options": {
+                "raw": {
+                  "language": "javascript"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/tickets/1/followups",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "tickets",
+                "1",
+                "followups"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Post requests",
+      "item": [
+        {
+          "name": "add tickets",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Статус ответа 201 OK\", function () {\r",
+                  "    pm.response.to.have.status(201);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"due_date\": \"2026-02-28\",\r\n  \"assigned_to\": \"admin\",\r\n  \"title\": \"New ticket\",\r\n  \"created\": \"2026-02-28T14:12:40.946Z\",\r\n  \"modified\": \"2026-02-28T14:12:40.946Z\",\r\n  \"submitter_email\": \"test@te.te\",\r\n  \"status\": 1,\r\n  \"on_hold\": false,\r\n  \"description\": \"Создание нового тикета\",\r\n  \"resolution\": \"Допускается\",\r\n  \"priority\": 1,\r\n  \"secret_key\": \"тест\",\r\n  \"queue\": 1,\r\n  \"kbitem\": 1,\r\n  \"merged_to\": 1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/tickets",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "tickets"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "change ticket status",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Статус ответа 201 OK\", function () {\r",
+                  "    pm.response.to.have.status(201);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"comment\": \"New commit\",\r\n  \"new_status\": 2\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/tickets/1/followup",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "tickets",
+                "1",
+                "followup"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Put requests",
+      "item": [
+        {
+          "name": "update ticket",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Статус ответа 200 OK\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "Token abcbe889f0306a8d35dfa101eb152850b434be35",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Token",
+                "value": "abcbe889f0306a8d35dfa101eb152850b434be35",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"due_date\": \"2026-02-28\",\r\n  \"assigned_to\": \"admin\",\r\n  \"title\": \"Обновленный тикет\",\r\n  \"created\": \"2026-02-28T14:42:05.492Z\",\r\n  \"modified\": \"2026-02-28T14:42:05.492Z\",\r\n  \"submitter_email\": \"testo@testing.te\",\r\n  \"status\": 2,\r\n  \"on_hold\": false,\r\n  \"description\": \"Описание для нового тикета\",\r\n  \"resolution\": \"Обновление\",\r\n  \"priority\": 1,\r\n  \"secret_key\": \"sds-cvcvc-123-szx\",\r\n  \"queue\": 1,\r\n  \"kbitem\": 1,\r\n  \"merged_to\": 1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/tickets/1",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "tickets",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "change ticket status",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Статус ответа 201 OK\", function () {\r",
+                  "    pm.response.to.have.status(201);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"comment\": \"test\",\r\n  \"new_status\": 1\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/tickets/1/followup",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "tickets",
+                "1",
+                "followup"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Delete requests",
+      "item": [
+        {
+          "name": "delete ticket",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Статус ответа 204 OK\", function () {\r",
+                  "    pm.response.to.have.status(204);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "Token abcbe889f0306a8d35dfa101eb152850b434be35",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Token",
+                "value": "abcbe889f0306a8d35dfa101eb152850b434be35",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Частичное обновление тикета\",\r\n  \"submitter_email\": \"nes@te.ru\",\r\n  \"status\": 1,\r\n  \"description\": \"описание для частичного обновление тикета\",\r\n  \"resolution\": \"Тут должен быть текст\"\r\n}"
+            },
+            "url": {
+              "raw": "{{url}}/api/tickets/344",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "tickets",
+                "344"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Patch requests",
+      "item": [
+        {
+          "name": "update ticket",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Статус ответа 200 OK\", function () {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});"
+                ],
+                "type": "text/javascript",
+                "packages": {},
+                "requests": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "value",
+                  "value": "Token abcbe889f0306a8d35dfa101eb152850b434be35",
+                  "type": "string"
+                },
+                {
+                  "key": "key",
+                  "value": "Authorization",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Token",
+                "value": "abcbe889f0306a8d35dfa101eb152850b434be35",
+                "type": "text",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"title\": \"Частичное обновление тикета\",\r\n  \"submitter_email\": \"nes@te.ru\",\r\n  \"status\": 1,\r\n  \"description\": \"описание для частичного обновление тикета\",\r\n  \"resolution\": \"Тут должен быть текст\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/tickets/1",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "tickets",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
